@@ -3,7 +3,7 @@ import { Client, Account, ID } from "appwrite";
 
 export class authService {
     client = new Client();
-    account
+    account;
     constructor() {
         this.client 
             .setEndpoint(conf.appwriteUrl)
@@ -36,7 +36,7 @@ export class authService {
         try {
             return await this.account.get();
         } catch (error) {
-            throw error
+            // throw error
         }
     }
 
@@ -49,5 +49,5 @@ export class authService {
     }
 }
 
-const authService = new authService();
-export default authService
+const authServices = new authService();
+export default authServices
